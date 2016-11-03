@@ -25,6 +25,4 @@ class Hero
   def gain_exp(amount)
     @exp += amount
   end
-
-
 end

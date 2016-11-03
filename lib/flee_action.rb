@@ -1,23 +1,16 @@
-class FleeAction
-  attr_reader :owner, :dicepool
+require_relative 'action'
 
-  def initialize(owner, dicepool)
-    @owner = owner
-    @dicepool = dicepool
+class FleeAction < Action
+  def action_attributes
+    @attribute = :stealth
+    @difficulty = :notice
   end
 
-  def activate(target)
-    if dicepool.skill_check(owner.stealth, target.notice)
-      success(target)
-    else
-      failure(target)
-    end
-  end
-
-  def success(target)
+  def success
+    owner.flee
   end
 
   def failure(target)
+    owner.damage(target.damage)
   end
-
 end

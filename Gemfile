@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'wdm'
 gem 'rspec'
 gem 'guard'
 gem 'guard-rspec'
-gem 'terminal-notifier-guard'
+gem 'win32console'
+gem 'rb-notifu'
